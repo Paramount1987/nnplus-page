@@ -5,5 +5,6 @@ import './utils/index';
 
 console.log('index webpack 4!! js');
 const arrowF = () => {
-	alert('works!');
+	alert('works!!!');
 }
+arrowF();

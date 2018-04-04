@@ -1,25 +1,17 @@
-
+{% set title = "Twig.js templating test" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Twig.js templating test</title>
+	<title>{{ title }}</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <p>s</p>
 
+{% block content %}{% endblock %}
 
-
-	<h1>Webpack 4! Twig</h1>
-
-	<a href="components.html">Components!</a>
-
-
-
-<footer class="footer">
-	<h3>Footer!</h3>
-</footer>
+{% include 'footer.twig' %}
 
 <script src="js/index.js"></script>
 </body>

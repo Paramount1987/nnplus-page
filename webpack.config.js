@@ -3,20 +3,22 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
 module.exports = {
-	mode: "development",
+	//mode: "development",
 	entry: "./src/scripts/index.js",
 
 	devtool: 'inline-source-map',
 
-	devServer: {
-		contentBase: path.resolve(__dirname, "dist"),
-		port: 3000
-	},
+	// devServer: {
+	// 	contentBase: path.resolve(__dirname, "dist"),
+	// 	port: 3000
+	// },
 
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "js/index.js"
 	},
+
+	watch: true,
 
 	watchOptions: {
 		aggregateTimeout: 300
