@@ -1,17 +1,19 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+const isProd = process.env.NODE_ENV === 'production';
+
+let plugins = [new ExtractTextPlugin('css/style.css')];
+
+if (isProd) {
+	plugins.push(new UglifyJsPlugin());
+}
 
 module.exports = {
-	//mode: "development",
 	entry: "./src/scripts/index.js",
 
 	devtool: 'inline-source-map',
-
-	// devServer: {
-	// 	contentBase: path.resolve(__dirname, "dist"),
-	// 	port: 3000
-	// },
 
 	output: {
 		path: path.resolve(__dirname, "dist"),
@@ -42,25 +44,10 @@ module.exports = {
 					fallback: 'style-loader',
 					use: ['css-loader', 'sass-loader']
 				})
-			},
-			{
-				test: /\.(png|jpg|gif)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[name].[ext]',
-							// outputPath: 'assets',
-							useRelativePath: true
-						}
-					}
-				]
 			}
 		]
 	},
 
-	plugins: [
-		new ExtractTextPlugin('css/style.css')
-	]
+	plugins: plugins
 }
 

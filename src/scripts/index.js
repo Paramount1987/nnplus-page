@@ -7,4 +7,5 @@ console.log('index webpack 4!! js');
 const arrowF = () => {
 	alert('works!!!');
 }
-arrowF();
+
+//arrowF();
