@@ -13,7 +13,7 @@ if (isProd) {
 module.exports = {
 	entry: "./src/scripts/index.js",
 
-	devtool: 'inline-source-map',
+	devtool: 'source-map',
 
 	output: {
 		path: path.resolve(__dirname, "dist"),
@@ -42,9 +42,35 @@ module.exports = {
 				test: /\.scss$/,
 				use: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
-					use: ['css-loader', 'sass-loader']
+					use: [
+						{
+							loader: 'css-loader',
+							options: {sourceMap: true}
+						},
+                        {
+                            loader: 'postcss-loader',
+                            options: {sourceMap: true}
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {sourceMap: true}
+                        }
+					]
 				})
-			}
+			},
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                        	name: '[name].[ext]',
+                            publicPath: '../img/style/',
+							outputPath: 'img/style/'
+						}
+                    }
+                ]
+            }
 		]
 	},
 
