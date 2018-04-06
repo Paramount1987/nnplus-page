@@ -45,15 +45,18 @@ module.exports = {
 					use: [
 						{
 							loader: 'css-loader',
-							options: {sourceMap: true}
+							options: {
+								sourceMap: !isProd,
+								minimize: isProd
+							}
 						},
 						{
 							loader: 'postcss-loader',
-							options: {sourceMap: true}
+							options: {sourceMap: !isProd}
 						},
 						{
 							loader: 'sass-loader',
-							options: {sourceMap: true}
+							options: {sourceMap: !isProd}
 						}
 					]
 				})
