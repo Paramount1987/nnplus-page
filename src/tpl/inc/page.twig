@@ -3,17 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{ title }}</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css?{{ date().getTime() }}">
 </head>
 <body>
 
 {% set title = "Twig.js templating test" %}
-<p>s</p>
+<p>some text</p>
 
 {% block content %}{% endblock %}
 
 {% include 'footer.twig' %}
 
-<script src="js/index.js"></script>
+<script src="js/index.js?{{ date().getTime() }}"></script>
 </body>
 </html>

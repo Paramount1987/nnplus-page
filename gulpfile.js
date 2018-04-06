@@ -3,27 +3,41 @@ var watch = require('gulp-watch');
 var webpack = require('webpack');
 var gulpWebpack = require('webpack-stream');
 var twig = require('gulp-twig');
-var imagemin = require('gulp-imagemin');
+var clean = require('gulp-clean');
 var browserSync = require('browser-sync').create();
 
-// Static Server
-gulp.task('serve', ['templates', 'image'], function() {
-
-    browserSync.init({
-        server: "./dist",
-        files: ["dist/css/style.css", "dist/images/*"]
-    });
-
-    gulp.watch("src/tpl/**/*.twig", ['templates']).on('change', browserSync.reload);
-    gulp.watch("dist/js/**/*.js").on('change', browserSync.reload);
-});
-
 //----------------------------------------------------------------
-gulp.task('templates', function () {
-
+function taskTemplate() {
     return gulp.src('./src/tpl/*.twig')
         .pipe(twig())
         .pipe(gulp.dest('./dist'));
+}
+gulp.task('templates', taskTemplate);
+
+// Static Server
+gulp.task('serve', function() {
+
+    browserSync.init({
+        server: "./dist",
+        files: ["./dist",]
+    });
+
+    //gulp.watch("src/tpl/**/*.twig", ['templates']).on('change', browserSync.reload);
+    //gulp.watch("dist/js/**/*.js").on('change', browserSync.reload);
+});
+
+//----------------------------------------------------------------
+gulp.task('clean', function () {
+    return gulp.src('./dist', {read: false, allowEmpty: true})
+        .pipe(clean());
+});
+
+//----------------------------------------------------------------
+gulp.task('copy', function () {
+    var sourceFiles = [ './src/images/**/*', './src/data/**/*' ];
+
+    return gulp.src(sourceFiles, {base: './src'})
+            .pipe(gulp.dest('dist/'))
 });
 
 //----------------------------------------------------------------
@@ -34,21 +48,19 @@ gulp.task('webpack-task', function() {
 });
 
 //----------------------------------------------------------------
-gulp.task('image', function () {
-   gulp.src('src/images/**/*')
-       .pipe(imagemin())
-       .pipe(gulp.dest('dist/images'))
+gulp.task('watch', function () {
+    var sourceFiles = [ './src/images/**/*.*', './src/data/*.*' ];
+
+    watch(sourceFiles, function () {
+            gulp.src(sourceFiles, {base: './src'})
+                .pipe(gulp.dest('./dist/'))
+        });
+
+    watch("src/tpl/**/*.twig", taskTemplate);
+    //watch("dist/js/**/*.js").on('change', browserSync.reload);
 });
 
 //----------------------------------------------------------------
-gulp.task('watcher', function () {
-	return watch('src/images/**/*', function () {
-		gulp.src('src/images/**/*')
-			.pipe(imagemin())
-			.pipe(gulp.dest('dist/images'))
-	});
-});
+gulp.task('default', gulp.series('clean', 'copy', 'templates',gulp.parallel('watch','webpack-task', 'serve')));
+gulp.task('build', gulp.series('clean','copy', 'webpack-task', 'templates'));
 
-//gulp.task('dev',  gulp.parallel('webpack-task', 'serve'));
-gulp.task('default',  ['webpack-task', 'image', 'watcher', 'serve']);
-gulp.task('build',  ['templates','webpack-task', 'image' ]);
