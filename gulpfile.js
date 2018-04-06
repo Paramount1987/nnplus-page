@@ -50,5 +50,5 @@ gulp.task('watcher', function () {
 });
 
 //gulp.task('dev',  gulp.parallel('webpack-task', 'serve'));
-gulp.task('default',  ['webpack-task', 'image', 'serve', 'watcher']);
+gulp.task('default',  ['webpack-task', 'image', 'watcher', 'serve']);
 gulp.task('build',  ['templates','webpack-task', 'image' ]);
