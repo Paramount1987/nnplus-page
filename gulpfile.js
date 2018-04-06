@@ -11,7 +11,7 @@ gulp.task('serve', ['templates', 'image'], function() {
 
     browserSync.init({
         server: "./dist",
-        files: ["dist/css/style.css", "dist/img/*"]
+        files: ["dist/css/style.css", "dist/images/*"]
     });
 
     gulp.watch("src/tpl/**/*.twig", ['templates']).on('change', browserSync.reload);
@@ -35,19 +35,20 @@ gulp.task('webpack-task', function() {
 
 //----------------------------------------------------------------
 gulp.task('image', function () {
-   gulp.src('src/img/**/*')
+   gulp.src('src/images/**/*')
        .pipe(imagemin())
-       .pipe(gulp.dest('dist/img'))
+       .pipe(gulp.dest('dist/images'))
 });
 
 //----------------------------------------------------------------
 gulp.task('watcher', function () {
-	return watch('src/img/**/*', function () {
-		gulp.src('src/img/**/*')
+	return watch('src/images/**/*', function () {
+		gulp.src('src/images/**/*')
 			.pipe(imagemin())
-			.pipe(gulp.dest('dist/img'))
+			.pipe(gulp.dest('dist/images'))
 	});
 });
 
 //gulp.task('dev',  gulp.parallel('webpack-task', 'serve'));
-gulp.task('dev',  ['image', 'webpack-task', 'serve', 'watcher']);
+gulp.task('default',  ['webpack-task', 'image', 'serve', 'watcher']);
+gulp.task('build',  ['templates','webpack-task', 'image' ]);

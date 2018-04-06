@@ -20,7 +20,7 @@ module.exports = {
 		filename: "js/index.js"
 	},
 
-	watch: true,
+	watch: !isProd,
 
 	watchOptions: {
 		aggregateTimeout: 300
@@ -47,30 +47,43 @@ module.exports = {
 							loader: 'css-loader',
 							options: {sourceMap: true}
 						},
-                        {
-                            loader: 'postcss-loader',
-                            options: {sourceMap: true}
-                        },
-                        {
-                            loader: 'sass-loader',
-                            options: {sourceMap: true}
-                        }
+						{
+							loader: 'postcss-loader',
+							options: {sourceMap: true}
+						},
+						{
+							loader: 'sass-loader',
+							options: {sourceMap: true}
+						}
 					]
 				})
 			},
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                        	name: '[name].[ext]',
-                            publicPath: '../img/style/',
-							outputPath: 'img/style/'
+			{
+				test: /\.(png|jpg|gif|svg)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							publicPath: '../images/style/',
+							outputPath: 'images/style/'
 						}
-                    }
-                ]
-            }
+					}
+				]
+			},
+			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							context: 'src/',
+							name: '[path][name].[ext]',
+							publicPath: '../'
+						}
+					}
+				]
+			}
 		]
 	},
 
