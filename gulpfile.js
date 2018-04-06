@@ -8,7 +8,7 @@ var browserSync = require('browser-sync').create();
 
 //----------------------------------------------------------------
 function taskTemplate() {
-    return gulp.src('./src/tpl/*.twig')
+    return gulp.src('./src/tpl/*.twig', { since: gulp.lastRun('templates') })
         .pipe(twig())
         .pipe(gulp.dest('./dist'));
 }
@@ -19,7 +19,10 @@ gulp.task('serve', function() {
 
     browserSync.init({
         server: "./dist",
-        files: ["./dist",]
+        files: ["./dist"],
+        reloadDebounce: 300,
+        reloadDelay: 300,
+        reloadThrottle: 300
     });
 
     //gulp.watch("src/tpl/**/*.twig", ['templates']).on('change', browserSync.reload);
@@ -57,10 +60,9 @@ gulp.task('watch', function () {
         });
 
     watch("src/tpl/**/*.twig", taskTemplate);
-    //watch("dist/js/**/*.js").on('change', browserSync.reload);
 });
 
 //----------------------------------------------------------------
-gulp.task('default', gulp.series('clean', 'copy', 'templates',gulp.parallel('watch','webpack-task', 'serve')));
+gulp.task('default', gulp.series('clean', 'copy', 'templates', gulp.parallel('watch','webpack-task', 'serve')));
 gulp.task('build', gulp.series('clean','copy', 'webpack-task', 'templates'));
 
