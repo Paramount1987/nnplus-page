@@ -3,6 +3,10 @@
 
 @import "utils/index";
 
+// Libs
+@import "libs/swiper";
+//-----------------------------------------
+
 body {
   background-image: url("images/01.png");
   color: var(--mainColor);

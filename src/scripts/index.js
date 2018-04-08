@@ -1,3 +1,15 @@
+// libs
+window.$ = window.jQuery = require('jquery');
+
+import Swiper from 'swiper';
+//----------------------------------------------
+
+$(document).ready(function () {
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop: true
+    })
+});
+
 import '../styles/index.scss';
 import './utils/index';
 
