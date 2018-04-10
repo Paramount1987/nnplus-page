@@ -5,10 +5,11 @@ window.$ = window.jQuery = require('jquery');
 import Swiper from 'swiper';
 
 require('./libs/index');
-require('./libs/select2');
-require('./libs/jquery.magnific-popup.min');
-require('./libs/jquery.mask.min');
-require('./libs/jquery.validate');
+
+// utils
+//----------------------------------------------
+require('./utils/index');
+
 //----------------------------------------------
 
 $(document).ready(function () {

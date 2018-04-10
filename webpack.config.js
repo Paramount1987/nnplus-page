@@ -87,10 +87,24 @@ module.exports = {
 						}
 					}
 				]
+			},
+			{
+				test: /\.modernizrrc.js$/,
+				use: [ 'modernizr-loader' ]
+			},
+			{
+				test: /\.modernizrrc(\.json)?$/,
+				use: [ 'modernizr-loader', 'json-loader' ]
 			}
 		]
 	},
 
-	plugins: plugins
+	plugins: plugins,
+
+	resolve: {
+		alias: {
+			modernizr$: path.resolve(__dirname, ".modernizrrc")
+		}
+	}
 }
 

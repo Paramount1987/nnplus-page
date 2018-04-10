@@ -1,1 +1,1 @@
-console.log('utils');
+require('./detectUserAgent');

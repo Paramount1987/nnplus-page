@@ -10436,105 +10436,6 @@ return jQuery;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return win; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return doc; });
-/**
- * SSR Window 1.0.0
- * Better handling for window object in SSR environment
- * https://github.com/nolimits4web/ssr-window
- *
- * Copyright 2018, Vladimir Kharlampidi
- *
- * Licensed under MIT
- *
- * Released on: February 10, 2018
- */
-var d;
-if (typeof document === 'undefined') {
-  d = {
-    body: {},
-    addEventListener: function addEventListener() {},
-    removeEventListener: function removeEventListener() {},
-    activeElement: {
-      blur: function blur() {},
-      nodeName: '',
-    },
-    querySelector: function querySelector() {
-      return null;
-    },
-    querySelectorAll: function querySelectorAll() {
-      return [];
-    },
-    getElementById: function getElementById() {
-      return null;
-    },
-    createEvent: function createEvent() {
-      return {
-        initEvent: function initEvent() {},
-      };
-    },
-    createElement: function createElement() {
-      return {
-        children: [],
-        childNodes: [],
-        style: {},
-        setAttribute: function setAttribute() {},
-        getElementsByTagName: function getElementsByTagName() {
-          return [];
-        },
-      };
-    },
-    location: { hash: '' },
-  };
-} else {
-  // eslint-disable-next-line
-  d = document;
-}
-
-var doc = d;
-
-var w;
-if (typeof window === 'undefined') {
-  w = {
-    document: doc,
-    navigator: {
-      userAgent: '',
-    },
-    location: {},
-    history: {},
-    CustomEvent: function CustomEvent() {
-      return this;
-    },
-    addEventListener: function addEventListener() {},
-    removeEventListener: function removeEventListener() {},
-    getComputedStyle: function getComputedStyle() {
-      return {
-        getPropertyValue: function getPropertyValue() {
-          return '';
-        },
-      };
-    },
-    Image: function Image() {},
-    Date: function Date() {},
-    screen: {},
-    setTimeout: function setTimeout() {},
-    clearTimeout: function clearTimeout() {},
-  };
-} else {
-  // eslint-disable-next-line
-  w = window;
-}
-
-var win = w;
-
-
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10685,6 +10586,105 @@ var _default = Util;
 exports.default = _default;
 
 /***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return win; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return doc; });
+/**
+ * SSR Window 1.0.0
+ * Better handling for window object in SSR environment
+ * https://github.com/nolimits4web/ssr-window
+ *
+ * Copyright 2018, Vladimir Kharlampidi
+ *
+ * Licensed under MIT
+ *
+ * Released on: February 10, 2018
+ */
+var d;
+if (typeof document === 'undefined') {
+  d = {
+    body: {},
+    addEventListener: function addEventListener() {},
+    removeEventListener: function removeEventListener() {},
+    activeElement: {
+      blur: function blur() {},
+      nodeName: '',
+    },
+    querySelector: function querySelector() {
+      return null;
+    },
+    querySelectorAll: function querySelectorAll() {
+      return [];
+    },
+    getElementById: function getElementById() {
+      return null;
+    },
+    createEvent: function createEvent() {
+      return {
+        initEvent: function initEvent() {},
+      };
+    },
+    createElement: function createElement() {
+      return {
+        children: [],
+        childNodes: [],
+        style: {},
+        setAttribute: function setAttribute() {},
+        getElementsByTagName: function getElementsByTagName() {
+          return [];
+        },
+      };
+    },
+    location: { hash: '' },
+  };
+} else {
+  // eslint-disable-next-line
+  d = document;
+}
+
+var doc = d;
+
+var w;
+if (typeof window === 'undefined') {
+  w = {
+    document: doc,
+    navigator: {
+      userAgent: '',
+    },
+    location: {},
+    history: {},
+    CustomEvent: function CustomEvent() {
+      return this;
+    },
+    addEventListener: function addEventListener() {},
+    removeEventListener: function removeEventListener() {},
+    getComputedStyle: function getComputedStyle() {
+      return {
+        getPropertyValue: function getPropertyValue() {
+          return '';
+        },
+      };
+    },
+    Image: function Image() {},
+    Date: function Date() {},
+    screen: {},
+    setTimeout: function setTimeout() {},
+    clearTimeout: function clearTimeout() {},
+  };
+} else {
+  // eslint-disable-next-line
+  w = window;
+}
+
+var win = w;
+
+
+
+
+/***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10701,15 +10701,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //-------------------------------------------------------
 window.$ = window.jQuery = __webpack_require__(0);
 
-__webpack_require__(8);
+__webpack_require__(7); // utils
+//----------------------------------------------
 
-__webpack_require__(20);
 
-__webpack_require__(21);
-
-__webpack_require__(22);
-
-__webpack_require__(24); //----------------------------------------------
+__webpack_require__(17); //----------------------------------------------
 
 
 $(document).ready(function () {
@@ -10736,7 +10732,7 @@ $(document).ready(function () {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dom7_dist_dom7_modular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ssr_window__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ssr_window__ = __webpack_require__(2);
 /**
  * Swiper 4.2.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -17423,7 +17419,7 @@ Swiper.use(components);
 /* unused harmony export touchmove */
 /* unused harmony export resize */
 /* unused harmony export scroll */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ssr_window__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ssr_window__ = __webpack_require__(2);
 /**
  * Dom7 2.0.3
  * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
@@ -18763,23 +18759,30 @@ function scroll(...args) {
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 7 */,
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+__webpack_require__(8);
+
 __webpack_require__(9);
 
 __webpack_require__(10);
 
-__webpack_require__(18);
+__webpack_require__(11);
 
-__webpack_require__(19);
+__webpack_require__(12);
+
+__webpack_require__(13);
+
+__webpack_require__(14);
+
+__webpack_require__(16);
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18792,7 +18795,7 @@ exports.default = void 0;
 
 var _jquery = _interopRequireDefault(__webpack_require__(0));
 
-var _util = _interopRequireDefault(__webpack_require__(2));
+var _util = _interopRequireDefault(__webpack_require__(1));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19061,7 +19064,7 @@ var _default = Tab;
 exports.default = _default;
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19074,7 +19077,7 @@ exports.default = void 0;
 
 var _jquery = _interopRequireDefault(__webpack_require__(0));
 
-var _util = _interopRequireDefault(__webpack_require__(2));
+var _util = _interopRequireDefault(__webpack_require__(1));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19476,14 +19479,7 @@ var _default = Collapse;
 exports.default = _default;
 
 /***/ }),
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19496,7 +19492,7 @@ exports.default = void 0;
 
 var _jquery = _interopRequireDefault(__webpack_require__(0));
 
-var _util = _interopRequireDefault(__webpack_require__(2));
+var _util = _interopRequireDefault(__webpack_require__(1));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19694,7 +19690,7 @@ var _default = Alert;
 exports.default = _default;
 
 /***/ }),
-/* 19 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19885,7 +19881,7 @@ var _default = Button;
 exports.default = _default;
 
 /***/ }),
-/* 20 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22680,7 +22676,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 });
 
 /***/ }),
-/* 21 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23430,7 +23426,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 });
 
 /***/ }),
-/* 22 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23811,10 +23807,10 @@ $jscomp.polyfill("Array.prototype.find", function (a) {
     a.jMaskGlobals.watchDataMask && a.applyDataMask();
   }, g.watchInterval);
 }, window.jQuery, window.Zepto);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(23)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
-/* 23 */
+/* 15 */
 /***/ (function(module, exports) {
 
 var g;
@@ -23841,7 +23837,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 24 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24511,6 +24507,80 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return "abort" === e ? (c[f] && c[f].abort(), c[f] = b.apply(this, arguments), c[f]) : b.apply(this, arguments);
   });
 });
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(25);
+
+/***/ }),
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _modernizr = _interopRequireDefault(__webpack_require__(26));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var isWin = /windows/gi.test(navigator.userAgent);
+var isIe = /trident.+rv:\d+/gi.test(navigator.userAgent);
+var isIe10 = /trident.+rv:10/gi.test(navigator.userAgent);
+var isIe11 = /trident.+rv:11/gi.test(navigator.userAgent);
+var isEdge = /windows.+edge\/\d+/gi.test(navigator.userAgent);
+
+_modernizr.default.addTest('ipad', function () {
+  return !!navigator.userAgent.match(/iPad/i);
+});
+
+_modernizr.default.addTest('iphone', function () {
+  return !!navigator.userAgent.match(/iPhone/i);
+});
+
+_modernizr.default.addTest('ipod', function () {
+  return !!navigator.userAgent.match(/iPod/i);
+});
+
+_modernizr.default.addTest('appleios', function () {
+  return _modernizr.default.ipad || _modernizr.default.ipod || _modernizr.default.iphone;
+});
+
+_modernizr.default.addTest('ie', isIe);
+
+_modernizr.default.addTest('ie-10', isIe10);
+
+_modernizr.default.addTest('ie-11', isIe11);
+
+_modernizr.default.addTest('edge', isEdge);
+
+_modernizr.default.addTest('windows', isWin);
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+;(function(window){
+var hadGlobal = 'Modernizr' in window;
+var oldGlobal = window.Modernizr;
+/*! modernizr 3.6.0 (Custom Build) | MIT *
+ * https://modernizr.com/download/?-touchevents-addtest-setclasses !*/
+!function(e,n,t){function o(e,n){return typeof e===n}function s(){var e,n,t,s,i,a,r;for(var l in u)if(u.hasOwnProperty(l)){if(e=[],n=u[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(s=o(n.fn,"function")?n.fn():n.fn,i=0;i<e.length;i++)a=e[i],r=a.split("."),1===r.length?Modernizr[r[0]]=s:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=s),p.push((s?"":"no-")+r.join("-"))}}function i(e){var n=h.className,t=Modernizr._config.classPrefix||"";if(v&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(o,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),v?h.className.baseVal=n:h.className=n)}function a(e,n){if("object"==typeof e)for(var t in e)d(e,t)&&a(t,e[t]);else{e=e.toLowerCase();var o=e.split("."),s=Modernizr[o[0]];if(2==o.length&&(s=s[o[1]]),"undefined"!=typeof s)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),i([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}function r(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):v?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function l(){var e=n.body;return e||(e=r(v?"svg":"body"),e.fake=!0),e}function f(e,t,o,s){var i,a,f,u,c="modernizr",d=r("div"),p=l();if(parseInt(o,10))for(;o--;)f=r("div"),f.id=s?s[o]:c+(o+1),d.appendChild(f);return i=r("style"),i.type="text/css",i.id="s"+c,(p.fake?p:d).appendChild(i),p.appendChild(d),i.styleSheet?i.styleSheet.cssText=e:i.appendChild(n.createTextNode(e)),d.id=c,p.fake&&(p.style.background="",p.style.overflow="hidden",u=h.style.overflow,h.style.overflow="hidden",h.appendChild(p)),a=t(d,e),p.fake?(p.parentNode.removeChild(p),h.style.overflow=u,h.offsetHeight):d.parentNode.removeChild(d),!!a}var u=[],c={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){u.push({name:e,fn:n,options:t})},addAsyncTest:function(e){u.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=c,Modernizr=new Modernizr;var d,p=[],h=n.documentElement,v="svg"===h.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;d=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,t){return e.call(n,t)}}(),c._l={},c.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},c._trigger=function(e,n){if(this._l[e]){var t=this._l[e];setTimeout(function(){var e,o;for(e=0;e<t.length;e++)(o=t[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){c.addTest=a});var m=c._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""];c._prefixes=m;var g=c.testStyles=f;Modernizr.addTest("touchevents",function(){var t;if("ontouchstart"in e||e.DocumentTouch&&n instanceof DocumentTouch)t=!0;else{var o=["@media (",m.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join("");g(o,function(e){t=9===e.offsetTop})}return t}),s(),i(p),delete c.addTest,delete c.addAsyncTest;for(var y=0;y<Modernizr._q.length;y++)Modernizr._q[y]();e.Modernizr=Modernizr}(window,document);
+module.exports = window.Modernizr;
+if (hadGlobal) { window.Modernizr = oldGlobal; }
+else { delete window.Modernizr; }
+})(window);
 
 /***/ })
 /******/ ]);
