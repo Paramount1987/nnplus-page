@@ -7,13 +7,20 @@ const isProd = process.env.NODE_ENV === 'production';
 let plugins = [new ExtractTextPlugin('css/style.css')];
 
 if (isProd) {
-	plugins.push(new UglifyJsPlugin());
+	plugins.push(new UglifyJsPlugin({
+		uglifyOptions: {
+            output: {
+                comments: false,
+                beautify: false
+            },
+		}
+	}));
 }
 
 module.exports = {
 	entry: "./src/scripts/index.js",
 
-	devtool: 'source-map',
+	devtool: isProd ? false : 'source-map',
 
 	output: {
 		path: path.resolve(__dirname, "dist"),
