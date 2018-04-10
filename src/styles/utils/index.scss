@@ -7,7 +7,6 @@ a {
 }
 
 body {
-  //background-image: url("images/01.png");
   background-color: aquamarine;
 }
 
@@ -25,6 +24,4 @@ h1 {
   font-weight: 600;
   opacity: .7;
   font-size: 50px;
-  color: var(--mainColor);
-  background: linear-gradient(to right, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%);
 }
