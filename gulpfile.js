@@ -65,4 +65,3 @@ gulp.task('watch', function () {
 //----------------------------------------------------------------
 gulp.task('default', gulp.series('clean', 'copy', 'templates', gulp.parallel('watch','webpack-task', 'serve')));
 gulp.task('build', gulp.series('clean','copy', 'webpack-task', 'templates'));
-

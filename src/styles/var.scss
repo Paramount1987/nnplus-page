@@ -1,5 +1,17 @@
 // Variables
 
+// Spacing
+$spacer: 10px !default;
+$spacers: () !default;
+$spacers: map-merge((
+        0: 0,
+        1: ($spacer * 1),
+        2: ($spacer * 2),
+        3: ($spacer * 3),
+        4: ($spacer * 4),
+        5: ($spacer * 5)
+), $spacers);
+
 //
 // Color system
 //
@@ -44,10 +56,9 @@ $link-hover-decoration:     underline !default;
 
 $grid-breakpoints: (
         xs: 0,
-        sm: 576px,
-        md: 768px,
-        lg: 992px,
-        xl: 1200px
+        sm: 768px,
+        md: 1024px,
+        lg: 1400px
 ) !default;
 
 //@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
@@ -59,10 +70,9 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-        sm: 540px,
-        md: 720px,
-        lg: 960px,
-        xl: 1140px
+        sm: 720px,
+        md: 960px,
+        lg: 1140px
 ) !default;
 
 //@include _assert-ascending($container-max-widths, "$container-max-widths");

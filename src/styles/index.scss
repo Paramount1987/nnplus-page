@@ -3,10 +3,14 @@
 @import "reboot";
 @import "font";
 
+// Utils
 @import "utils/index";
+//-----------------------------------------
 
 // Libs
 @import "libs/swiper";
+@import "libs/select2/core";
+@import "libs/magnific-popup/main";
 //-----------------------------------------
 
 // Components
