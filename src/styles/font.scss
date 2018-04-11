@@ -1,6 +1,1 @@
-@font-face {
-  font-family: 'Circe';
-  src: url('../fonts/Circe/Circe-Bold.woff2') format('woff2'), url('../fonts/Circe/Circe-Bold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-}
+//@include font-face(Circe, '../fonts/Circe/Circe-Bold', 600, normal, woff2 woff);
