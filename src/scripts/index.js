@@ -2,8 +2,6 @@
 //-------------------------------------------------------
 window.$ = window.jQuery = require('jquery');
 
-import Swiper from 'swiper';
-
 require('./libs/index');
 
 // utils
