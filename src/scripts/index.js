@@ -12,7 +12,6 @@ require('./libs/index');
 require('./utils/index');
 
 //----------------------------------------------
-
 $(document).ready(() => {
   /* global Swiper */
   const swiper = new Swiper('.swiper-container', {
@@ -27,6 +26,7 @@ $(document).ready(() => {
     focus: '#username',
     modal: true,
   });
+
   $(document).on('click', '.popup-modal-dismiss', (e) => {
     e.preventDefault();
     $.magnificPopup.close();

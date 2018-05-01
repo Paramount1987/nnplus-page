@@ -8,21 +8,13 @@ const isIe11 = /trident.+rv:11/gi.test(navigator.userAgent);
 
 const isEdge = /windows.+edge\/\d+/gi.test(navigator.userAgent);
 
-Modernizr.addTest('ipad', function () {
-	return !!navigator.userAgent.match(/iPad/i);
-});
+Modernizr.addTest('ipad', () => !!navigator.userAgent.match(/iPad/i));
 
-Modernizr.addTest('iphone', function () {
-	return !!navigator.userAgent.match(/iPhone/i);
-});
+Modernizr.addTest('iphone', () => !!navigator.userAgent.match(/iPhone/i));
 
-Modernizr.addTest('ipod', function () {
-	return !!navigator.userAgent.match(/iPod/i);
-});
+Modernizr.addTest('ipod', () => !!navigator.userAgent.match(/iPod/i));
 
-Modernizr.addTest('appleios', function () {
-	return (Modernizr.ipad || Modernizr.ipod || Modernizr.iphone);
-});
+Modernizr.addTest('appleios', () => (Modernizr.ipad || Modernizr.ipod || Modernizr.iphone));
 
 Modernizr.addTest('ie', isIe);
 Modernizr.addTest('ie-10', isIe10);
