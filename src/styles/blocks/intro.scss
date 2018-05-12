@@ -1,0 +1,40 @@
+.nnp-intro {
+
+  &__pic {
+    display: block;
+    width: 280px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    position: relative;
+    padding: 80px 315px 60px 0;
+
+    &__pic {
+      position: absolute;
+      z-index: 1;
+      top: 60px;
+      right: -60px;
+      width: 450px;
+    }
+
+    .nnp-h1 {
+      position: relative;
+      z-index: 5;
+    }
+
+    .nnp-p {
+      position: relative;
+      z-index: 5;
+      font-size: 24px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-right: 600px;
+
+    &__pic {
+      top: -20px;
+      width: 550px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.nnp-list-default {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nnp-list-double {
+
+  > li {
+    margin-bottom: 45px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.nnp-list-person {
+
+  > li {
+    margin-bottom: 30px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(#000, .1);
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .nnp-list-double {
+    display: flex;
+    justify-content: space-between;
+
+    > li {
+      width: 45%;
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  
+}

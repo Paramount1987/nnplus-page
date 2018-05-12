@@ -1,14 +1,18 @@
+.nnp-wrapper {
+  overflow: hidden;
+}
 // Container widths
 
-.container {
+.nnp-container {
   @include make-container();
   @include make-container-max-widths();
+  padding: 40px 20px;
 }
 
 // Fluid container
 //
 // Utilizes the mixin meant for fixed width containers, but with 100% width for
 // fluid, full width layouts.
-.container-fluid {
+.nnp-container-fluid {
   @include make-container();
 }

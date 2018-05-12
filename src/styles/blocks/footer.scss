@@ -1,0 +1,23 @@
+.nnp-footer {
+
+  &__descr {
+    font-weight: 600;
+  }
+  &__link {
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  @include media-breakpoint-up(sm) {
+  
+    &__descr {
+      width: 400px;
+      font-size: 22px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 40px 0;
+  }
+}

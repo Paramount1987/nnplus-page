@@ -4,26 +4,36 @@
 // Headings
 //
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-
+.nnp-h1 {
+  font-size: 28px;
+  font-weight: 600;
 }
 
-h1, .h1 { }
-h2, .h2 { }
-h3, .h3 { }
-h4, .h4 { }
-h5, .h5 { }
-h6, .h6 { }
-
-//
-// Horizontal rules
-//
-
-hr {
-
+.nnp-h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
+.nnp-h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+@include media-breakpoint-up(sm) {
+  .nnp-h1 {
+    margin-bottom: 40px;
+    font-size: 36px;
+  }
+  .nnp-h2 {
+    margin-bottom: 40px;
+    font-size: 26px;
+  }
+  .nnp-h3 {
+    font-size: 24px;
+  }
+}
 
 //
 // Emphasis
