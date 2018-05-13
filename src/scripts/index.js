@@ -14,5 +14,9 @@ require('./utils/index');
 //----------------------------------------------
 $(document).ready(() => {
   /* global Swiper */
-
+  const swiper = new Swiper('.js-swiper-container', {
+    slidesPerView: 'auto',
+    spaceBetween: 5,
+    freeMode: true,
+  });
 });
