@@ -42,45 +42,123 @@
 
       <!-- Swiper -->
       <div class="swiper-container js-swiper-container py-1 mt-2 mb-4">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><button class="nnp-btn">Все</button></div>
-          <div class="swiper-slide"><button class="nnp-btn is-active">Репродуктологи</button></div>
-          <div class="swiper-slide"><button class="nnp-btn">Гинекологи-хирурги</button></div>
-        </div>
+        <ul class="swiper-wrapper nav nav-tabs nnp-list-default" id="nnp-tab" role="tablist">
+          <li class="swiper-slide nav-item">
+            <button class="nnp-btn nav-link" data-toggle="tab" href="#all" role="tab"  aria-selected="false">Все</button>
+          </li>
+          <li class="swiper-slide nav-item">
+            <button class="nnp-btn nav-link active" data-toggle="tab" href="#repro" role="tab"  aria-selected="true">Репродуктологи</button>
+          </li>
+          <li class="swiper-slide nav-item">
+            <button class="nnp-btn" data-toggle="tab" href="#gine" role="tab" aria-selected="false">Гинекологи-хирурги</button>
+          </li>
+        </ul>
       </div>
 
-      <ul class="nnp-list-default nnp-list-person">
-        <li>
-          <div class="nnp-person">
-            <div class="nnp-person-left">
-              <img src="images/1.jpg" alt="" class="nnp-person__pic">
-            </div>
-            <div class="nnp-person-right">
-              <div class="nnp-person__title">Гимадеева Эльвира Радыковна</div>
-              <div class="nnp-person__state">врач-репродуктолог</div>
-              <div class="nnp-person-links">
-                <a href="#" class="nnp-btn-link">Начать консультацию</a>
-                <a href="#" class="nnp-person__link">подробнее о враче</a>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="nnp-person">
-            <div class="nnp-person-left">
-              <img src="images/2.jpg" alt="" class="nnp-person__pic">
-            </div>
-            <div class="nnp-person-right">
-              <div class="nnp-person__title">Нуриев Нияз Ильясович</div>
-              <div class="nnp-person__state">врач-репродуктолог</div>
-              <div class="nnp-person-links">
-                <a href="#" class="nnp-btn-link">Начать консультацию</a>
-                <a href="#" class="nnp-person__link">подробнее о враче</a>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <div class="tab-content" id="nnp-tab-content">
+        <div class="tab-pane fade" id="all" role="tabpanel">
+            <ul class="nnp-list-default nnp-list-person">
+                <li>
+                  <div class="nnp-person">
+                    <div class="nnp-person-left">
+                      <img src="images/1.jpg" alt="" class="nnp-person__pic">
+                    </div>
+                    <div class="nnp-person-right">
+                      <div class="nnp-person__title">Гимадеева Эльвира Радыковна</div>
+                      <div class="nnp-person__state">врач-репродуктолог</div>
+                      <div class="nnp-person-links">
+                        <a href="#" class="nnp-btn-link">Начать консультацию</a>
+                        <a href="#" class="nnp-person__link">подробнее о враче</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="nnp-person">
+                    <div class="nnp-person-left">
+                      <img src="images/2.jpg" alt="" class="nnp-person__pic">
+                    </div>
+                    <div class="nnp-person-right">
+                      <div class="nnp-person__title">Нуриев Нияз Ильясович</div>
+                      <div class="nnp-person__state">врач-репродуктолог</div>
+                      <div class="nnp-person-links">
+                        <a href="#" class="nnp-btn-link">Начать консультацию</a>
+                        <a href="#" class="nnp-person__link">подробнее о враче</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+        </div>
+        <div class="tab-pane fade show active" id="repro" role="tabpanel">
+            <ul class="nnp-list-default nnp-list-person">
+                <li>
+                    <div class="nnp-person">
+                      <div class="nnp-person-left">
+                        <img src="images/2.jpg" alt="" class="nnp-person__pic">
+                      </div>
+                      <div class="nnp-person-right">
+                        <div class="nnp-person__title">Нуриев Нияз Ильясович</div>
+                        <div class="nnp-person__state">врач-репродуктолог</div>
+                        <div class="nnp-person-links">
+                          <a href="#" class="nnp-btn-link">Начать консультацию</a>
+                          <a href="#" class="nnp-person__link">подробнее о враче</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                <li>
+                  <div class="nnp-person">
+                    <div class="nnp-person-left">
+                      <img src="images/1.jpg" alt="" class="nnp-person__pic">
+                    </div>
+                    <div class="nnp-person-right">
+                      <div class="nnp-person__title">Гимадеева Эльвира Радыковна</div>
+                      <div class="nnp-person__state">врач-репродуктолог</div>
+                      <div class="nnp-person-links">
+                        <a href="#" class="nnp-btn-link">Начать консультацию</a>
+                        <a href="#" class="nnp-person__link">подробнее о враче</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+        </div>
+        <div class="tab-pane fade" id="gine" role="tabpanel">
+            <ul class="nnp-list-default nnp-list-person">
+                <li>
+                    <div class="nnp-person">
+                      <div class="nnp-person-left">
+                        <img src="images/2.jpg" alt="" class="nnp-person__pic">
+                      </div>
+                      <div class="nnp-person-right">
+                        <div class="nnp-person__title">Нуриев Нияз Ильясович</div>
+                        <div class="nnp-person__state">врач-репродуктолог</div>
+                        <div class="nnp-person-links">
+                          <a href="#" class="nnp-btn-link">Начать консультацию</a>
+                          <a href="#" class="nnp-person__link">подробнее о враче</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                <li>
+                  <div class="nnp-person">
+                    <div class="nnp-person-left">
+                      <img src="images/1.jpg" alt="" class="nnp-person__pic">
+                    </div>
+                    <div class="nnp-person-right">
+                      <div class="nnp-person__title">Гимадеева Эльвира Радыковна</div>
+                      <div class="nnp-person__state">врач-репродуктолог</div>
+                      <div class="nnp-person-links">
+                        <a href="#" class="nnp-btn-link">Начать консультацию</a>
+                        <a href="#" class="nnp-person__link">подробнее о враче</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+        </div>
+      </div>
     </div>
   </section>
 

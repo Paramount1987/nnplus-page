@@ -29,6 +29,12 @@
     }
   }
 
+  @include media-breakpoint-up(md) {
+    &__pic {
+      top: 25px;
+    }
+  }
+
   @include media-breakpoint-up(lg) {
     padding-right: 600px;
 
